@@ -17,7 +17,7 @@ const TextField = React.forwardRef(
             name={name}
             placeholder={placeholder}
             ref={ref}
-            className={`bg-secondary rounded focus:border focus:border-blue outline-none text-sm text-ascent-1 px-4 py-3 placeholder:text-textParag ${styles}`}
+            className={`bg-secondary rounded focus:border focus:border-blue outline-none text-sm text-textParag px-4 py-3 placeholder:text-textParag ${styles}`}
             {...register}
             aria-invalid={error ? "true" : "false"}
           />
