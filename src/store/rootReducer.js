@@ -4,8 +4,8 @@ import postSlice from "./slices/postSlice";
 import themeSlice from "./slices/themeSlice";
 
 const rootReducer = combineReducers({
-  userSlice,
-  postSlice,
-  themeSlice,
+  user: userSlice,
+  posts: postSlice,
+  theme: themeSlice,
 });
 export { rootReducer };

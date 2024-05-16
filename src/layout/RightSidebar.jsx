@@ -2,7 +2,9 @@ import React from "react";
 
 const RightSidebar = () => {
   return (
-    <div className="hidden lg:block lg:w-[300px] border">RightSidebar</div>
+    <div className="hidden xl:block lg:w-[300px] h-screen rounded-lg text-white p-2 bg-primary ">
+      RightSidebar
+    </div>
   );
 };
 

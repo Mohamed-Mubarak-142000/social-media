@@ -1,7 +1,12 @@
 import React from "react";
+import CreatePost from "../components/CreatePost";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <CreatePost />
+    </>
+  );
 };
 
 export default Home;

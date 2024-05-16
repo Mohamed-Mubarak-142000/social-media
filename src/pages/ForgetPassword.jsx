@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
-import imageLogin from "../assets/loginImage.jpg";
+import React, { useEffect, useState } from "react";
+import imageReset from "../assets/reset.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import TextField from "../common/TextField";
+import Loading from "../common/Loading";
 import { useSelector } from "react-redux";
-const Login = () => {
+const ForgetPassword = () => {
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -15,21 +19,20 @@ const Login = () => {
 
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
-
-  const handleLogin = () => {};
-
   useEffect(() => {
     user.token && navigate("/");
   }, [user.token]);
 
+  const handleForgetPassword = () => {};
+
   return (
     <section className="bg-primary rounded-md">
-      <div className="lg:grid md:min-h-[80vh] lg:grid-cols-12">
+      <div className="lg:grid lg:min-h-[80vh] lg:grid-cols-12">
         <aside className="relative hidden md:block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
           <img
             alt="image-login"
-            src={imageLogin}
-            className="absolute inset-0 rounded-r-md h-full w-full object-cover"
+            src={imageReset}
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </aside>
 
@@ -40,7 +43,7 @@ const Login = () => {
             </Link>
 
             <h1 className="mt-6 text-2xl font-bold text-blue capitalize sm:text-3xl md:text-4xl">
-              login to Social media
+              Reset password to Social media
             </h1>
 
             <p className="mt-4 leading-relaxed text-textColor opacity-50">
@@ -49,7 +52,7 @@ const Login = () => {
             </p>
 
             <form
-              onSubmit={handleSubmit(handleLogin)}
+              onSubmit={handleSubmit(handleForgetPassword)}
               className="mt-8 grid grid-cols-12 gap-6"
             >
               {/***email */}
@@ -68,42 +71,34 @@ const Login = () => {
                 />
               </div>
 
-              <div className="col-span-12 sm:col-span-12">
-                <TextField
-                  name="password"
-                  placeholder="password"
-                  label="password"
-                  type="password"
-                  register={register("password", {
-                    required: "password is required",
-                  })}
-                  styles="w-full text-textColor  "
-                  labelStyles="ml-2 text-textColor capitalize"
-                  error={errors.password ? errors.password.message : ""}
-                />
+              <div>
+                {errorMessage?.message && (
+                  <span
+                    className={`text-sm mt-2 ${
+                      errorMessage?.status === "failed"
+                        ? "text-[#f64949fe] "
+                        : "text-[#2ba150fe]"
+                    }`}
+                  >
+                    {errorMessage.message}
+                  </span>
+                )}
               </div>
 
-              <Link
-                to="/forget-password"
-                className="w-full col-span-12 sm:col-span-12 text-end text-blue pr-3"
-              >
-                Forget Password?
-              </Link>
-
               <div className="col-span-12 sm:flex sm:items-center sm:gap-4">
-                <button className="inline-block shrink-0 capitalize rounded-md bg-blue px-12 py-3 text-sm font-medium text-white transition">
-                  login
-                </button>
+                {isSubmit ? (
+                  <Loading />
+                ) : (
+                  <button className="inline-block shrink-0 capitalize rounded-md bg-blue px-12 py-3 text-sm font-medium text-white transition">
+                    Submit
+                  </button>
+                )}
 
                 <p className="mt-4 text-sm text-textParag sm:mt-0">
-                  creating an account,
-                  <Link
-                    to="/register"
-                    className="text-blue font-bold underline capitalize"
-                  >
-                    sign up
+                  Already have an account?
+                  <Link to="/login" className="text-blue font-bold underline">
+                    Log in
                   </Link>
-                  .
                 </p>
               </div>
             </form>
@@ -114,4 +109,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgetPassword;

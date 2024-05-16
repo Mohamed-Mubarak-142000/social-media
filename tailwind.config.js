@@ -7,7 +7,10 @@ export default {
       primary: "rgb(var(--color-primary) / <alpha-value>)",
       secondary: "rgb(var(--color-secondary) / <alpha-value>)",
       blue: "rgb(var(--color-blue) / <alpha-value>)",
+      red: "rgb(var(--color-red) / <alpha-value>)",
       white: "rgb(var(--color-white) / <alpha-value>)",
+      textColor: "rgb(var(--color-text) / <alpha-value>)",
+      textParag: "rgb(var(--color-parag) / <alpha-value>)",
       ascent: {
         1: "rgb(var(--color-ascent1) / <alpha-value>)",
         2: "rgb(var(--color-ascent2) / <alpha-value>)",

@@ -8,9 +8,12 @@ body {
 }
 
 ::-webkit-scrollbar {
-  display: none;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;
+  background-color: transparent;
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c7c7c7;
+  border-radius: 1rem;
 }
 
 .topbar {
@@ -76,22 +79,23 @@ body {
 @layer base {
   :root {
     --color-bg: 227 227 227;
-    --color-primary: 255 255 255;
-    --color-secondary: 255 255 255;
-    --color-ascent1: 0 0 0;
-    --color-ascent2: 89 91 100;
-    --color-blue: 6 90 216;
+    --color-primary: 255 255 255; /**navbar*/
+    --color-secondary: 240 240 240; /**inputs*/
+    --color-blue: 6 90 216; /**buttons*/
+    --color-red: 183 5 20; /**notific*/
+    --color-text: 0 0 0;
     --color-white: 255 255 255;
+    --color-parag: 150 150 150;
   }
   /* //15 23 42  21 30 49*/
   [data-theme="dark"] {
     --color-bg: 12 12 12;
     --color-primary: 31 31 31;
     --color-secondary: 47 45 48;
-    --color-ascent1: 255 255 255;
-    --color-ascent2: 164 161 162;
+    --color-red: 183 5 20;
     --color-blue: 6 90 216;
-    /* //16 176 255; */
+    --color-text: 255 255 255;
     --color-white: 255 255 255;
+    --color-parag: 150 150 150;
   }
 }
