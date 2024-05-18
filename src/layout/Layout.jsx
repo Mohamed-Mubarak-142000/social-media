@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "./Navbar";
 import LeftSidebar from "./LeftSidebar";
 import RightSidebar from "./RightSidebar";
@@ -46,7 +45,8 @@ const Layout = ({ children }) => {
 
         {loacte.pathname === "/login" ||
         loacte.pathname === "/register" ||
-        loacte.pathname === "/forget-password" ? null : (
+        loacte.pathname === "/forget-password" ||
+        loacte.pathname === "/all-request" ? null : (
           <RightSidebar />
         )}
       </section>

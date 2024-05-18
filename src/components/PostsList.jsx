@@ -5,8 +5,6 @@ import OnePost from "./OnePost";
 const PostsList = () => {
   const [listPost, setListPost] = useState(posts);
 
-  console.log(listPost);
-
   return (
     <div className="">
       {listPost?.map((post) => {

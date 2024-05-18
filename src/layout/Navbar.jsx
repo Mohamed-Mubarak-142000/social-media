@@ -45,7 +45,7 @@ const Navbar = () => {
               placeholder="Search about..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className=" text-textColor outline-none bg-secondary shadow-sm py-1  md:py-2 px-1 w-[200px] md:w-[300px] capitalize rounded-xl focus:border focus:border-blue"
+              className=" text-textColor outline-none bg-secondary shadow-sm py-1  md:py-2 px-1 w-[200px] md:w-[300px] capitalize rounded-md focus:border focus:border-blue"
             />
           </form>
         </div>

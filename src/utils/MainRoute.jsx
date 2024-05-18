@@ -8,6 +8,7 @@ import UserDetails from "../pages/UserDetails";
 import SearchPosts from "../pages/SearchPosts";
 import Videos from "../pages/Videos";
 import ForgetPassword from "../pages/ForgetPassword";
+import AllRequests from "../pages/AllRequests";
 const MainRoute = () => {
   const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const MainRoute = () => {
         {
           path: "/forget-password",
           element: <ForgetPassword />,
+        },
+        {
+          path: "/all-request",
+          element: <AllRequests />,
         },
       ],
     },

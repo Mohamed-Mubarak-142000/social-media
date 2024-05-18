@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { FaImage } from "react-icons/fa";
 import { CgCalendarDates } from "react-icons/cg";
 import { RiArticleFill } from "react-icons/ri";
